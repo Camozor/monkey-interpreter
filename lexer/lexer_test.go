@@ -9,7 +9,7 @@ func TestNextToken(t *testing.T) {
 	input := `=+(){},;`
 	lexer := New(input)
 
-	tests := []ExpectedResult{
+	tests := []ExpectedToken{
 		{token.ASSIGN, "="},
 		{token.PLUS, "+"},
 		{token.LPAREN, "("},
@@ -37,7 +37,7 @@ func TestNextTokenWithFunc(t *testing.T) {
 	`
 	lexer := New(input)
 
-	tests := []ExpectedResult{
+	tests := []ExpectedToken{
 		{token.LET, "let"},
 		{token.IDENT, "five"},
 		{token.ASSIGN, "="},
@@ -90,7 +90,7 @@ func TestNextTokenWithGibberish(t *testing.T) {
 	`
 	lexer := New(input)
 
-	tests := []ExpectedResult{
+	tests := []ExpectedToken{
 		{token.LET, "let"},
 		{token.IDENT, "five"},
 		{token.ASSIGN, "="},
@@ -115,12 +115,12 @@ func TestNextTokenWithGibberish(t *testing.T) {
 	testLexer(lexer, tests, t)
 }
 
-type ExpectedResult struct {
+type ExpectedToken struct {
 	expectedType    token.TokenType
 	expectedLiteral string
 }
 
-func testLexer(lexer *Lexer, tests []ExpectedResult, t *testing.T) {
+func testLexer(lexer *Lexer, tests []ExpectedToken, t *testing.T) {
 	for i, test := range tests {
 		tok := lexer.NextToken()
 
