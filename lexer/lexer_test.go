@@ -87,6 +87,12 @@ func TestNextTokenWithGibberish(t *testing.T) {
 		let five = 5;
 		!-/*5;
 		5 < 10 > 5;
+
+		if (5 < 10) {
+				return true;
+		} else {
+				return false;
+		}
 	`
 	lexer := New(input)
 
