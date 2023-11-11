@@ -93,6 +93,9 @@ func TestNextTokenWithGibberish(t *testing.T) {
 		} else {
 				return false;
 		}
+		
+		10 == 10;
+		5 != 10;
 	`
 	lexer := New(input)
 
@@ -139,15 +142,15 @@ func TestNextTokenWithGibberish(t *testing.T) {
 
 		{token.RBRACE, "}"},
 
-		// {token.INT, "10"},
-		// {token.EQ, "=="},
-		// {token.INT, "10"},
-		// {token.SEMICOLON, ";"},
-		//
-		// {token.INT, "5"},
-		// {token.NOT_EQ, "!="},
-		// {token.INT, "10"},
-		// {token.SEMICOLON, ";"},
+		{token.INT, "10"},
+		{token.EQ, "=="},
+		{token.INT, "10"},
+		{token.SEMICOLON, ";"},
+
+		{token.INT, "5"},
+		{token.NOT_EQ, "!="},
+		{token.INT, "10"},
+		{token.SEMICOLON, ";"},
 	}
 
 	testLexer(lexer, tests, t)
