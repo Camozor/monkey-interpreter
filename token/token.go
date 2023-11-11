@@ -16,26 +16,26 @@ const (
 	INT   = "INT"
 
 	// Operators
-	ASSIGN   = "="
-	PLUS     = "+"
-	MINUS    = "-"
-	BANG     = "!"
-	ASTERISK = "*"
-	SLASH    = "/"
+	ASSIGN   = "ASSIGN"
+	PLUS     = "PLUS"
+	MINUS    = "MINUS"
+	BANG     = "BANG"
+	ASTERISK = "ASTERISK"
+	SLASH    = "SLASH"
 
-	LT = "<"
-	GT = ">"
+	LT = "LT"
+	GT = "GT"
 
-	EQ     = "=="
-	NOT_EQ = "!="
+	EQ     = "EQ"
+	NOT_EQ = "NOT_EQ"
 
 	// Delimiters
-	COMMA     = ","
-	SEMICOLON = ";"
-	LPAREN    = "("
-	RPAREN    = ")"
-	LBRACE    = "{"
-	RBRACE    = "}"
+	COMMA     = "COMMA"
+	SEMICOLON = "SEMICOLON"
+	LPAREN    = "LPAREN"
+	RPAREN    = "RPAREN"
+	LBRACE    = "LBRACE"
+	RBRACE    = "RBRACE"
 
 	// Keywords
 	FUNCTION = "FUNCTION"
